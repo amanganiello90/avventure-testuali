@@ -2,6 +2,7 @@
   "compileOnSave": true,
   "include": ["./src/*"],
   "compilerOptions": {
+    "types": [],
     "outDir": "./build",
     "importHelpers": true,
     "target": "ES2017",

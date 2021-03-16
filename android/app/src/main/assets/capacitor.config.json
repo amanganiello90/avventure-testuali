@@ -1,13 +1,18 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "avventure-testuali",
+  "appId": "com.amanga.avventureapp",
+  "appName": "avventureTestuali",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
   "plugins": {
     "SplashScreen": {
-      "launchShowDuration": 0
+      "launchAutoHide": false,
+      "showSpinner": true,
+      "androidScaleType": "CENTER_CROP"
     }
   },
-  "cordova": {}
+  "cordova": {
+    "preferences": {
+    }
+  }
 }
