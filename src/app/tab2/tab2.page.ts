@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Plugins } from '@capacitor/core';
+import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner/ngx';
 
 
 @Component({
@@ -9,24 +9,29 @@ import { Plugins } from '@capacitor/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  scannedData: any;
 
-  async startScan() {
-    const { BarcodeScanner } = Plugins;
+  constructor(private barcodeScanner: BarcodeScanner) {}
 
-      // check or request permission
-    const status = await BarcodeScanner.checkPermission({ force: true });
+   startScan() {
+    const options: BarcodeScannerOptions = {
+      preferFrontCamera: false,
+      showFlipCameraButton: true,
+      showTorchButton: true,
+      torchOn: false,
+      prompt: 'Scan your QR Code',
+      resultDisplayDuration: 500,
+      formats: 'QR_CODE',
+      orientation: 'portrait',
+    };
 
-    if (status.granted) {
-    BarcodeScanner.hideBackground(); // make background of WebView transparent
+    this.barcodeScanner.scan(options).then(qrCodeData => {
+      console.log('QR data', qrCodeData);
+      this.scannedData = qrCodeData.text;
 
-    const result = await BarcodeScanner.startScan({ targetedFormats: ['QR_CODE'] }); // start scanning and wait for a result
-
-    // if the result has content
-    if (result.hasContent) {
-      console.log(result.content); // log the raw scanned content
-    }
-  }
+    }).catch(err => {
+      console.log('Error in QR code scan', err);
+    });
  }
 
 }

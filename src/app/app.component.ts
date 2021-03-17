@@ -19,12 +19,12 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      if (!this.platform.is('electron')) {
+      if ((this.platform.is('mobile') )) {
       StatusBar.setStyle({
         style: StatusBarStyle.Dark
       });
       SplashScreen.hide();
-    }
-  });
+      }
+    });
   }
 }

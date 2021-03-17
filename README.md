@@ -14,4 +14,5 @@ This is a POC (Proof Of Concept) app to use ionic angular 5.5.2 e capacitor 2.4.
 - In `android/app/build.gradle` changed `versionName and versionCode`
 - Added `@capacitor-community/electron` with scripts
 - Added `"types": []` in electron/tsconfig.json for jasmine types error
-- Added `@capacitor-community/barcode-scanner` 
+- Added `phonegap-plugin-barcodescanner`
+

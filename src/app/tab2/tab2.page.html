@@ -15,7 +15,9 @@
 
   <ion-button (click)="startScan()">
     <ion-icon slot="start" name="star"></ion-icon>
-    scan
+    scan QR code
   </ion-button>
-
+  <ion-text color="primary">
+  Your Code : {{scannedData}}
+  </ion-text>
 </ion-content>
