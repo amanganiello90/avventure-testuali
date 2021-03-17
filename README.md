@@ -12,7 +12,6 @@ This is a POC (Proof Of Concept) app to use ionic angular 5.5.2 e capacitor 2.4.
 - Removed permissions not required (geolocation, audio and so on) in `android/app/src/main/androidManifest.xml`
 - Change minSdk and target for android in `android/variables.gradle`
 - In `android/app/build.gradle` changed `versionName and versionCode`
-- In `android/app/build.gradle` added in release `shrinkResources and minifyEnabled` to true
 - Added `@capacitor-community/electron` with scripts
 - Added `"types": []` in electron/tsconfig.json for jasmine types error
 - Added `@capacitor-community/barcode-scanner` 
