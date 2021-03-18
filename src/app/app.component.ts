@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
-import { Plugins, StatusBarStyle } from '@capacitor/core';
+import { Plugins } from '@capacitor/core';
 
-const { StatusBar, SplashScreen  } = Plugins;
+const { SplashScreen  } = Plugins;
 
 @Component({
   selector: 'app-root',
@@ -19,12 +19,7 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      if ((this.platform.is('mobile') )) {
-      StatusBar.setStyle({
-        style: StatusBarStyle.Dark
-      });
       SplashScreen.hide();
-      }
     });
   }
 }
